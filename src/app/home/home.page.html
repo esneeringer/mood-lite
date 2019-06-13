@@ -1,31 +1,33 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="end">
-      <ion-button [routerLink]="['/new-task']">
-        <ion-icon slot="icon-only" name="add"></ion-icon>
-      </ion-button>
+
+      <ion-avatar padding>
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=retro&f=y%22">
+      </ion-avatar>
+
     </ion-buttons>
-    <ion-title>Today is : </ion-title>
+    <ion-title>Moody</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-
+Today is : 
   <!-- Toggles in a List -->
   <ion-list>
     <ion-item>
       <ion-label>Did you sleep well last night?</ion-label>
-      <ion-toggle [(ngModel)]="pepperoni"></ion-toggle>
+      <ion-toggle></ion-toggle>
     </ion-item>
 
     <ion-item>
       <ion-label>Did you eat healthy today?</ion-label>
-      <ion-toggle [(ngModel)]="sausage"></ion-toggle>
+      <ion-toggle></ion-toggle>
     </ion-item>
 
     <ion-item>
       <ion-label>Did you go outside today?</ion-label>
-      <ion-toggle [(ngModel)]="mushrooms"></ion-toggle>
+      <ion-toggle></ion-toggle>
     </ion-item>
 
     <ion-item>
@@ -39,16 +41,22 @@
     </ion-item>
   </ion-list>
 
-  <ion-list>
-    <ion-chip>
-      <ion-label color="danger">Sad</ion-label>
-    </ion-chip>
-    <ion-chip>
-      <ion-label color="success">Happy</ion-label>
-    </ion-chip>
-  </ion-list>
+  <p>How do you feel?</p>
 
-  <ion-button expand="block">Save My Day</ion-button>
+  <ion-list>
+  <ion-segment>
+    <ion-segment-button value="friends" color="success" checked>
+      Happy
+    </ion-segment-button>
+    <ion-segment-button value="enemies">
+      Sad
+    </ion-segment-button>
+  </ion-segment>
+</ion-list>
+
+    <hr>
+  
+  <ion-button expand="block" fill="solid" color="secondary">Save My Day</ion-button>
 
 </ion-content>
 <ion-footer (click)="logout()">
